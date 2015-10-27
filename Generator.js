@@ -33,7 +33,7 @@ var util = require('util')
 _.defaults = require('merge-defaults');
 
 function installer(next) {
-  console.log("installer")
+  // console.log("installer")
   if (packages.length === 0)
     NPM.installPackage({name: 'browserify', saveDev: true}).exec(function(){
       console.log(lib + " installé");
@@ -56,12 +56,12 @@ module.exports = {
     for (var i=0,len=unlinks.length;i<len;i++) {
       fs.unlinkSync(unlinks[i]);
     }
-    console.log("before")
+    // console.log("before")
     setTimeout(cb, 1000);
   },
 
   after: function (scope, cb) {
-    console.log("after");
+    // console.log("after");
     installer(function() {
       console.log("Done");
       cb();
@@ -107,21 +107,21 @@ module.exports = {
     './components/front/routes.js': { template: 'components/front/routes.js' },
     './components/front/app.js': { template: 'components/front/app.js' },
 
-   './assets': { folder: {} },
+   // './assets': { folder: {} },
 
-   './assets/js': { folder: {} },
+   // './assets/js': { folder: {} },
     './assets/js/admin': { folder: {} },
     './assets/js/admin/dependencies': { folder: {} },
     './assets/js/front': { folder: {} },
     './assets/js/front/dependencies': { folder: {} },
 
-   './assets/styles': { folder: {} },
+   // './assets/styles': { folder: {} },
     './assets/styles/admin': { folder: {} },
     './assets/styles/admin/importer.less': { template: './assets/styles/admin/importer.less' },
     './assets/styles/front': { folder: {} },
     './assets/styles/front/importer.less': { template: './assets/styles/front/importer.less' },
 
-   './views': { folder: {} },
+   // './views': { folder: {} },
     './views/admin.ejs': { template: 'views/admin.ejs' },
 
   },
