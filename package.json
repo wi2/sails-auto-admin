@@ -1,6 +1,6 @@
 {
   "name": "sails-auto-admin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Automatic admin depends on model with reactjs and newforms",
   "main": "dist/api/hooks/admin/index.js",
   "scripts": {
@@ -46,7 +46,7 @@
     "auto-admin": "^0.2.8",
     "lodash": "^3.10.1",
     "machinepack-npm": "^5.1.0",
-    "marlinspike": "^0.12",
+    "marlinspike": "github:wi2/marlinspike",
     "merge-defaults": "^0.2.1",
     "sails-generate": "^0.12.3",
     "fs-extra": "^0.26.0"
