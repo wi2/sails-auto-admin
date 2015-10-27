@@ -5,7 +5,10 @@
   "main": "dist/api/hooks/admin/index.js",
   "scripts": {
     "test": "gulp && mocha --reporter spec --compilers js:babel/register",
-    "prepublish": "gulp"
+    "prepublish": "gulp",
+    "preinstall": "npm install --save react@0.13 react-router newforms newforms-bootstrap rc-pagination auto-admin",
+    "postinstall": "npm i browserify --save-dev && npm run build-js",
+    "build-js": "browserify -r react -r react-router -r newforms -r newforms-bootstrap -r rc-pagination -r auto-admin > assets/js/admin/dependencies/build.js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +42,6 @@
     "request": "^2.58.0",
     "sails": "github:balderdashy/sails",
     "sails-disk": "^0.10.8",
-    "sails-hook-passport": "^0.3.2",
     "sails-memory": "^0.10.5",
     "supertest": "^0.15.0"
   },

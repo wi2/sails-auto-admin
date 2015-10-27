@@ -6,18 +6,15 @@
 var _ = require('lodash');
 var Sails = require('sails');
 var path = require('path');
+var ConfigOverrides = require('../config/env/testing');
 var sails;
+
 
 before(function(done) {
   this.timeout(30000);
 
-  var config = {
-    appPath: path.resolve(__dirname, '..')
-  };
-
-  Sails.lift(config, function(err, server) {
+  Sails.lift(ConfigOverrides, function(err, server) {
     global.sails = server;
-
     if (err) {
       return done(err);
     }
