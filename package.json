@@ -60,7 +60,7 @@
     "hookName": "auto-admin"
   },
   "sailsGenerator": {
-    "type": "isoreact",
+    "type": "autoadmin",
     "behavior": "overrides `sails generate autoadmin`",
     "sailsVersion": "~0.11.0"
   },

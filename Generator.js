@@ -4,7 +4,7 @@
 
 var util = require('util')
   , _ = require('lodash')
-  , fs = require('fs')
+  , fs = require('fs-extra')
   , NPM = require('machinepack-npm')
   , packages = [
     'sails-hook-babel',
@@ -33,6 +33,7 @@ var util = require('util')
 _.defaults = require('merge-defaults');
 
 function installer(next) {
+  console.log("installer")
   if (packages.length === 0)
     NPM.installPackage({name: 'browserify', saveDev: true}).exec(function(){
       console.log(lib + " installé");
@@ -55,15 +56,16 @@ module.exports = {
     for (var i=0,len=unlinks.length;i<len;i++) {
       fs.unlinkSync(unlinks[i]);
     }
-    cb();
+    console.log("before")
+    setTimeout(cb, 1000);
   },
 
   after: function (scope, cb) {
+    console.log("after");
     installer(function() {
       console.log("Done");
       cb();
     });
-
   },
 
 
@@ -93,7 +95,7 @@ module.exports = {
     './components': { folder: {} },
 
     './components/admin': { folder: {} },
-    './components/admin/form.js': { template: 'components/admin/form.js' },
+    './components/admin/forms.js': { template: 'components/admin/forms.js' },
     './components/admin/app.js': { template: 'components/admin/app.js' },
 
     './components/front': { folder: {} },
@@ -105,19 +107,22 @@ module.exports = {
     './components/front/routes.js': { template: 'components/front/routes.js' },
     './components/front/app.js': { template: 'components/front/app.js' },
 
-    './views/admin.ejs': { template: 'components/admin.ejs' },
+   './assets': { folder: {} },
 
-
+   './assets/js': { folder: {} },
     './assets/js/admin': { folder: {} },
     './assets/js/admin/dependencies': { folder: {} },
     './assets/js/front': { folder: {} },
     './assets/js/front/dependencies': { folder: {} },
 
-    './assets/style/admin': { folder: {} },
-    './assets/style/admin/importer.less': { template: './assets/style/admin/importer.less' },
-    './assets/style/front': { folder: {} },
-    './assets/style/front/importer.less': { template: './assets/style/front/importer.less' },
+   './assets/styles': { folder: {} },
+    './assets/styles/admin': { folder: {} },
+    './assets/styles/admin/importer.less': { template: './assets/styles/admin/importer.less' },
+    './assets/styles/front': { folder: {} },
+    './assets/styles/front/importer.less': { template: './assets/styles/front/importer.less' },
 
+   './views': { folder: {} },
+    './views/admin.ejs': { template: 'views/admin.ejs' },
 
   },
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= locals.title %></title>
+    <title>${"<%= locals.title %>"}</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    <%- body %>
+    ${"<%- body %>"}
 
-    <script type="text/javascript"><%- locals.state||'' %></script>
+    <script type="text/javascript">${"<%- locals.state||'' %>"}</script>
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/admin/dependencies/build.js"></script>
