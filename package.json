@@ -6,8 +6,6 @@
   "scripts": {
     "test": "gulp && mocha --reporter spec --compilers js:babel/register",
     "prepublish": "gulp",
-    "preinstall": "npm install --save react@0.13 react-router newforms newforms-bootstrap rc-pagination auto-admin",
-    "postinstall": "npm i browserify --save-dev && npm run build-js",
     "build-js": "browserify -r react -r react-router -r newforms -r newforms-bootstrap -r rc-pagination -r auto-admin > assets/js/admin/dependencies/build.js"
   },
   "repository": {
@@ -37,7 +35,6 @@
     "jshint": "^2.8.0",
     "lodash": "^3.10.1",
     "mocha": "^2.x.x",
-    "passport-local": "^1.0.0",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "reportback": "^0.1.9",

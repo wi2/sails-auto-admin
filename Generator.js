@@ -11,7 +11,7 @@ var util = require('util')
     'grunt-browserify',
     'grunt-react',
     'babelify',
-    'react',
+    'react@0.13',
     'react-router',
     'auto-admin',
     'rc-pagination',
@@ -105,7 +105,19 @@ module.exports = {
     './components/front/routes.js': { template: 'components/front/routes.js' },
     './components/front/app.js': { template: 'components/front/app.js' },
 
-    './views/admin.ejs': { template: 'components/admin.ejs' }
+    './views/admin.ejs': { template: 'components/admin.ejs' },
+
+
+    './assets/js/admin': { folder: {} },
+    './assets/js/admin/dependencies': { folder: {} },
+    './assets/js/front': { folder: {} },
+    './assets/js/front/dependencies': { folder: {} },
+
+    './assets/style/admin': { folder: {} },
+    './assets/style/admin/importer.less': { template: './assets/style/admin/importer.less' },
+    './assets/style/front': { folder: {} },
+    './assets/style/front/importer.less': { template: './assets/style/front/importer.less' },
+
 
   },
 
