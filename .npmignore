@@ -19,3 +19,4 @@ CONTRIBUTING.md
 
 
 api/models/*.js
+dist/api/models/*.js

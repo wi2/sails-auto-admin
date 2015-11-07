@@ -16,7 +16,8 @@ var util = require('util')
     'auto-admin',
     'rc-pagination',
     'newforms',
-    'newforms-bootstrap'
+    'newforms-bootstrap',
+    'marlinspike'
     ]
   , unlinks = [
     'tasks/config/less.js',
